@@ -18,10 +18,12 @@ public class TitlesPanel extends JPanel implements ActionListener
 {
     private Graphics2D g2d;
     private Timer animation;
-    private boolean is_done;
+    private boolean is_done; 
     private int start_angle;
     private int shape;
-    
+    /**
+     * Формирование полотна
+     */ 
     public TitlesPanel(final int _shape) {
         this.start_angle = 0;
         this.is_done = true;
@@ -29,14 +31,17 @@ public class TitlesPanel extends JPanel implements ActionListener
         (this.animation = new Timer(50, this)).setInitialDelay(50);
         this.animation.start();
     }
-    
+	/**
+     * Запуск процедуры
+     */ 
     @Override
     public void actionPerformed(final ActionEvent arg0) {
         if (this.is_done) {
             this.repaint();
         }
     }
-    
+ 
+
     private void doDrawing(final Graphics g) {
         this.is_done = false;
         (this.g2d = (Graphics2D)g).setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
