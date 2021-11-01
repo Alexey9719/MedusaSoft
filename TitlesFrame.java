@@ -8,6 +8,9 @@ import javax.swing.JFrame;
 
 public class TitlesFrame extends JFrame
 {
+    /**
+     * инициализация интерфейса
+     */  
     public TitlesFrame() {
         this.initUI();
     }
