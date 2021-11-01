@@ -44,7 +44,7 @@ public class TitlesPanel extends JPanel implements ActionListener
         final Insets insets = this.getInsets();
         final int w = size.width - insets.left - insets.right;
         final int h = size.height - insets.top - insets.bottom;
-        final ShapeFactory shape = new ShapeFactory(this.shape);
+        final ShapeFactory shape = new ShapeFactory(3);
         this.g2d.setStroke(shape.stroke);
         this.g2d.setPaint(shape.paint);
         double angle = this.start_angle++;
