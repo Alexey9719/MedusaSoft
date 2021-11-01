@@ -13,14 +13,18 @@ import java.awt.Shape;
 // Decompiled by Procyon v0.5.36
 // 
 
-public class ShapeFactory
-{
+public class ShapeFactory {
+    /**
+     * определение формы и цвета фигуры
+     */ 
     public Shape shape;
     public BasicStroke stroke;
+    /**
+     * создание указанной фигуры
+     */  
     public Paint paint;
     public int width;
-    public int height;
-    
+    public int height;   
     public ShapeFactory(final int shape_type) {
         this.width = 25;
         this.height = 25;
@@ -53,23 +57,23 @@ public class ShapeFactory
                 break;
             }
             default: {
-                throw new Error("type is unsupported");
+                throw new Error("type is nusupported");
             }
         }
-        switch (shape_type % 10) {
+        switch (shape_type) {  
             case 1: {
                 this.stroke = new BasicStroke(3.0f);
                 break;
             }
             case 3: {
-                this.paint = new GradientPaint((float)(-this.width), (float)(-this.height), Color.white, (float)this.width, (float)this.height, Color.gray, true);
+            	this.paint = new GradientPaint((float)(-this.width), (float)(-this.height), Color.white, (float)this.width, (float)this.height, Color.gray, true);
                 break;
             }
             case 4: {
                 this.stroke = new BasicStroke(7.0f);
                 break;
             }
-            case 7: {                
+            case 7: {
                 break;
             }
             case 8: {
@@ -83,7 +87,7 @@ public class ShapeFactory
     }
     
     private static Shape createStar(final int arms, final Point center, final double rOuter, final double rInner) {
-        final double angle = 3.141592653589793 / arms;
+    	final double angle = 3.141592653589793 / arms;
         final GeneralPath path = new GeneralPath();
         for (int i = 0; i < 2 * arms; ++i) {
             final double r = ((i & 0x1) == 0x0) ? rOuter : rInner;
