@@ -62,14 +62,14 @@ public class ShapeFactory
                 break;
             }
             case 3: {
+                this.paint = new GradientPaint((float)(-this.width), (float)(-this.height), Color.white, (float)this.width, (float)this.height, Color.gray, true);
                 break;
             }
             case 4: {
                 this.stroke = new BasicStroke(7.0f);
                 break;
             }
-            case 7: {
-                this.paint = new GradientPaint((float)(-this.width), (float)(-this.height), Color.white, (float)this.width, (float)this.height, Color.gray, true);
+            case 7: {                
                 break;
             }
             case 8: {
