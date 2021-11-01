@@ -25,7 +25,7 @@ public class ShapeFactory
         this.width = 25;
         this.height = 25;
         this.stroke = new BasicStroke(3.0f);
-        switch (shape_type / 10) {
+        switch (shape_type) {
             case 1: {
                 this.shape = createStar(3, new Point(0, 0), this.width / 2.0, this.width / 2.0);
                 break;
@@ -53,7 +53,7 @@ public class ShapeFactory
                 break;
             }
             default: {
-                throw new Error("type is nusupported");
+                throw new Error("type is unsupported");
             }
         }
         switch (shape_type % 10) {
